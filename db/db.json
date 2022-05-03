@@ -1,0 +1,43 @@
+{
+  "memes": [
+    {
+      "id": 0,
+      "titre": "titre meme 1",
+      "text": "Mon meme",
+      "x": 100,
+      "y": 100,
+      "fontSize": 12,
+      "fontWeight": 700,
+      "color": "#ADE0F1",
+      "underline": true,
+      "italic": false,
+      "imageId": 0
+    },
+    {
+      "id": 1
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "title": "bleu",
+      "href": "bleu.jpg",
+      "w": 1920,
+      "h": 1080
+    },
+    {
+        "id": 1,
+        "title": "blanc",
+        "href": "blanc.jpg",
+        "w": 820,
+        "h": 917
+      },
+      {
+        "id": 2,
+        "title": "noir",
+        "href": "noir.jpg",
+        "w": 900,
+        "h": 675
+      }
+  ]
+}
