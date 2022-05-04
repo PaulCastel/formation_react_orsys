@@ -17,7 +17,7 @@ const Button = (props)=>{ // fonction pour créer composant, autre méthode que 
     }, [isClicked]) // détecte les changements sur isClicked, si on met rien potentiellement ça agit sur tout changement
 
     return <button 
-        className={style.Button}
+        className={`${style.Button}${isClicked?''+style.clicked:''}`}
         style={{...props.style, backgroundColor:props.bgColor, color:props.color}}
         type={props.type}
         onClick={(evt) => {

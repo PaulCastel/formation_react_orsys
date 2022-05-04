@@ -4,7 +4,7 @@ import style from './FlexW.module.css'
 
 function FlexW(props) {
   return (
-    <div className={style.FlexW} data-testid="FlexW">FlexW</div>
+    <div className={style.FlexW} data-testid="FlexW">{props.children}</div>
   )
 }
 

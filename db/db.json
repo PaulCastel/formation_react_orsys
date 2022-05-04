@@ -20,24 +20,24 @@
   "images": [
     {
       "id": 0,
-      "title": "bleu",
-      "href": "bleu.jpg",
+      "name": "bleu",
+      "url": "bleu.png",
       "w": 1920,
       "h": 1080
     },
     {
         "id": 1,
-        "title": "blanc",
-        "href": "blanc.jpg",
+        "name": "blanc",
+        "url": "blanc.jpg",
         "w": 820,
         "h": 917
-      },
-      {
+    },
+    {
         "id": 2,
-        "title": "noir",
-        "href": "noir.jpg",
+        "name": "noir",
+        "url": "noir.png",
         "w": 900,
         "h": 675
-      }
+    }
   ]
 }

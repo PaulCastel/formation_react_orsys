@@ -10,3 +10,8 @@
     font-size: large;
     font-weight: 700;
 }
+.clicked{
+    border: 1px ridge grey;
+    box-shadow: 5px 55px 15px grey;
+    text-decoration: underline;
+}
