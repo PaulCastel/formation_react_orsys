@@ -14,7 +14,30 @@
       "imageId": 0
     },
     {
-      "id": 1
+      "id": 1,
+      "titre": "titre meme 2",
+      "text": "Mon meme 2",
+      "x": 100,
+      "y": 100,
+      "fontSize": 12,
+      "fontWeight": 700,
+      "color": "#ADE0F1",
+      "underline": true,
+      "italic": false,
+      "imageId": 1
+    },
+    {
+      "id": 2,
+      "titre": "titre meme 3",
+      "text": "Mon meme 3",
+      "x": 100,
+      "y": 100,
+      "fontSize": 12,
+      "fontWeight": 700,
+      "color": "#ADE0F1",
+      "underline": true,
+      "italic": false,
+      "imageId": 2
     }
   ],
   "images": [

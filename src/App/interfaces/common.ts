@@ -20,7 +20,7 @@ export const DummyMeme:IMeme={
     fontSize:30,
     underline:false,
     italic:false,
-    imageId:0,
+    imageId:-1,
     color:'#000000'
 };
 export interface IImage{

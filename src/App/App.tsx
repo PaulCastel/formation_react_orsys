@@ -4,11 +4,21 @@ import Button from './components/ui/Button/Button';
 import {ADR_REST} from './config/config';
 import {MemeSVGViewer} from 'orsys-tjs-meme';
 import MemeForm from './components/ui/MemeForm/MemeForm';
+import MemeThumbnail from './components/ui/MemeThumbnail/MemeThumbnail';
+import { DummyMeme, IImage, IMeme } from './interfaces/common';
+//import { DummyMeme } from 'orsys-tjs-meme/dist/interfaces/common';
 
-class App extends React.Component {
+interface IAppState{
+  memes:Array<IMeme>,
+  images:Array<IImage>,
+  current:IMeme
+}
+interface IAppProps{}
+
+class App extends React.Component<IAppProps, IAppState> {
   constructor(props) {
     super(props);
-    this.state={memes:[], images: []}
+    this.state={memes:[], images: [], current:DummyMeme}
   }
   componentDidUpdate(oldProps, oldState) {
      console.log("component update", oldState, this.state)
@@ -24,19 +34,26 @@ componentDidMount(){
   render() {
     return (
       <div className='App'>
-        {JSON.stringify(this.state)}
+        {/*JSON.stringify(this.state)*/}
+        <MemeThumbnail
+              memes={this.state.memes}
+              images={this.state.images}
+        />
         <FlexW>
-          { /* && ternaire react, si le premier est vrai, alors... pas de sinon
-              on fait une protection car le même est obligatoire sinon erreur */ }
-          {this.state.memes.length && (
-            <MemeSVGViewer basePath='/images/'
-              meme={this.state.memes[0]}
+          <MemeSVGViewer basePath='/images/'
+              meme={this.state.current}
               image={this.state.images.find(
-                  (e) => e.id === this.state.memes[0].imageId
+                  (e) => e.id === this.state.current.imageId
               )}
-            />
-          )}
-          <MemeForm images={this.state.images}/>
+          />        
+
+          <MemeForm 
+            images={this.state.images}
+            meme={this.state.current} 
+            onFormChange={(obj:object)=>{ // au lieu d'object on pourrait mettre une interface avec tous les champs modifiable
+              this.setState({current: {...this.state.current, ...obj}}); // on vient modifier l'objet courant avec ancienne valeur + new valeur modifée ???
+            }}
+          />
         </FlexW>
 
         {/*Valeur du compter : {this.state.counter}
