@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import style from './MemeThumbnail.module.css'
 import { IMeme, IImage } from '../../../interfaces/common'
 import { MemeSVGViewer } from 'orsys-tjs-meme'
+import { connect } from 'react-redux'
 
 const MemeThumbnail:React.FC<{images:Array<IImage>, memes:Array<IMeme>}> = (props:any) => {
   return (
@@ -24,4 +25,16 @@ MemeThumbnail.propTypes = {
   images:PropTypes.array.isRequired,
 };
 
+function mapStateToProps(state:any, ownprops:any) {
+  return {
+    ...ownprops,
+    memes: state.ressources.memes,
+    images:state.ressources.images,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {}
+}
+export const ConnectedMemeThumbnail = connect(mapStateToProps, mapDispatchToProps)(MemeThumbnail);
 export default MemeThumbnail
