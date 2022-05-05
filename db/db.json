@@ -49,18 +49,18 @@
       "h": 1080
     },
     {
-        "id": 1,
-        "name": "blanc",
-        "url": "blanc.jpg",
-        "w": 820,
-        "h": 917
+      "id": 1,
+      "name": "blanc",
+      "url": "blanc.jpg",
+      "w": 820,
+      "h": 917
     },
     {
-        "id": 2,
-        "name": "noir",
-        "url": "noir.png",
-        "w": 900,
-        "h": 675
+      "id": 2,
+      "name": "noir",
+      "url": "noir.png",
+      "w": 900,
+      "h": 675
     }
   ]
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import FlexW from './components/layout/FlexW/FlexW';
 import ConnectedMemeViewer from './components/ui/ConnectedMemeViewer/ConnectedMemeViewer';
 import { ConnectedMemeForm } from './components/ui/MemeForm/MemeForm';
