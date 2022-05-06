@@ -1,0 +1,8 @@
+.PDFMemeThumbnail {
+    display: flex;
+    height: 90vh;
+    overflow-y: auto;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    flex-wrap: wrap;
+  }

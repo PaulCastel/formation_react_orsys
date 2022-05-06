@@ -4,17 +4,19 @@ import style from './MemeThumbnail.module.css'
 import { IMeme, IImage } from '../../../interfaces/common'
 import { MemeSVGViewer } from 'orsys-tjs-meme'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const MemeThumbnail:React.FC<{images:Array<IImage>, memes:Array<IMeme>}> = (props:any) => {
   return (
     <div className={style.MemeThumbnail} data-testid="MemeThumbnail">
       {props.memes.map((e:IMeme, i:number) => (
-        <MemeSVGViewer 
-          key={`thumbs-`+i}
-          meme={e} 
-          image={props.images.find((img:IImage) => img.id === e.imageId)}
-          basePath='/images/'
-        />
+        <Link to={`/editor/${e.id}`} key={`thumbs-`+i}>
+          <MemeSVGViewer 
+            meme={e} 
+            image={props.images.find((img:IImage) => img.id === e.imageId)}
+            basePath='/images/'
+          />
+        </Link>
       ))}
     </div>
   )

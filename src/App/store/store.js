@@ -21,7 +21,9 @@ export const ACTION_RESSOURCES = Object.freeze({
 function ressourcesReducer(state = ressourcesInitialState, action) {
   switch (action.type) {
     case ACTION_RESSOURCES.ADD_SAVED_MEME:
-      return { ...state, memes: [...state.memes, action.value] };
+        const index=state.memes.findIndex(m=>m.id===action.value.id);
+        if(index>=0){return { ...state, memes: [...state.memes.slice(0,index-1), action.value,...state.memes.slice(index)] }}
+        else return { ...state, memes: [...state.memes, action.value] };
     case ACTION_RESSOURCES.INIT_RESSOURCES:
       const memes = fetch(ADR_REST + "/memes").then((flux) => flux.json());
       const img = fetch(ADR_REST + "/images").then((flux) => flux.json());
